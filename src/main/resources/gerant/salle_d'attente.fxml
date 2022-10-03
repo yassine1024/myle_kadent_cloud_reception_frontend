@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" styleClass="side_ankerpane" stylesheets="@../com/example/kadent/add.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="766.0" layoutY="19.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="MINUS" layoutX="744.0" layoutY="21.0" />
+      <Pane layoutX="581.0" layoutY="27.0" prefHeight="42.0" prefWidth="200.0" styleClass="pane" stylesheets="@../com/example/kadent/add.css" />
+      <ImageView fitHeight="27.0" fitWidth="34.0" layoutX="681.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/profil.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label" layoutX="720.0" layoutY="40.0" styleClass="label2" stylesheets="@../com/example/kadent/add.css" text="Gerant" />
+      <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="760.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/1024px-OOjs_UI_icon_expand.svg.png" />
+         </image>
+      </ImageView>
+      <FontAwesomeIconView glyphName="BELL" layoutX="644.0" layoutY="52.0" />
+      <FontAwesomeIconView glyphName="COMMENT" layoutX="608.0" layoutY="52.0" />
+      <Text fx:id="txt" fill="WHITE" layoutX="35.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt" text="La salle d'attente" />
+      <Line endX="140.0" layoutX="136.0" layoutY="74.0" startX="-100.0" stroke="WHITE" />
+      <HBox layoutX="180.0" layoutY="103.0" prefHeight="275.0" prefWidth="571.0">
+         <children>
+            <ScrollPane fx:id="transparent" prefHeight="258.0" prefWidth="569.0" styleClass="transparent" stylesheets="@../com/example/kadent/styled.css">
+               <content>
+                  <VBox fx:id="tableview" prefHeight="271.0" prefWidth="561.0" styleClass="tableview" stylesheets="@../com/example/kadent/styled.css">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="217.0" styleClass="light-gray">
+                           <children>
+                              <Label alignment="CENTER" prefWidth="70.0" styleClass="label22" text="Temps">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="25.0" prefWidth="120.0" styleClass="label22" text="Date" />
+                              <Label alignment="CENTER" layoutX="60.0" layoutY="25.0" prefWidth="120.0" styleClass="label22" text="Patient" />
+                              <Label alignment="CENTER" layoutX="230.0" layoutY="25.0" prefWidth="120.0" styleClass="label22" text="N° téléphone" />
+                              <Label alignment="CENTER" layoutX="260.0" layoutY="24.0" prefWidth="150.0" styleClass="label22" text="Remarque" />
+                              <Label alignment="CENTER" layoutX="260.0" layoutY="25.0" prefWidth="150.0" styleClass="label22" text="Modification" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="217.0">
+                           <children>
+                              <Label alignment="CENTER" prefWidth="70.0" text="09:00">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="25.0" prefWidth="120.0" text="19/09/2022" />
+                              <Label alignment="CENTER" layoutX="60.0" layoutY="25.0" prefWidth="120.0" text="izri zakaria" />
+                              <Label alignment="CENTER" layoutX="230.0" layoutY="25.0" prefWidth="120.0" text="0696224886" />
+                              <Label alignment="CENTER" layoutX="280.0" layoutY="24.0" prefWidth="150.0" text="Détartrage" />
+                              <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/878604_edit_512x512.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView fitHeight="33.0" fitWidth="35.0" layoutX="430.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/unnamed.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="55.0" prefHeight="45.0" prefWidth="217.0">
+                           <children>
+                              <Label alignment="CENTER" prefWidth="70.0" text="09:00">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="25.0" prefWidth="120.0" text="19/09/2022" />
+                              <Label alignment="CENTER" layoutX="60.0" layoutY="25.0" prefWidth="120.0" text="izri zakaria" />
+                              <Label alignment="CENTER" layoutX="230.0" layoutY="25.0" prefWidth="120.0" text="0696224886" />
+                              <Label alignment="CENTER" layoutX="280.0" layoutY="24.0" prefWidth="150.0" text="Détartrage" />
+                              <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/878604_edit_512x512.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView fitHeight="33.0" fitWidth="35.0" layoutX="430.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/unnamed.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="100.0" prefHeight="45.0" prefWidth="217.0">
+                           <children>
+                              <Label alignment="CENTER" prefWidth="70.0" text="09:00">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="25.0" prefWidth="120.0" text="19/09/2022" />
+                              <Label alignment="CENTER" layoutX="60.0" layoutY="25.0" prefWidth="120.0" text="izri zakaria" />
+                              <Label alignment="CENTER" layoutX="230.0" layoutY="25.0" prefWidth="120.0" text="0696224886" />
+                              <Label alignment="CENTER" layoutX="280.0" layoutY="24.0" prefWidth="150.0" text="Détartrage" />
+                              <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/878604_edit_512x512.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView fitHeight="33.0" fitWidth="35.0" layoutX="430.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/unnamed.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="145.0" prefHeight="45.0" prefWidth="217.0">
+                           <children>
+                              <Label alignment="CENTER" prefWidth="70.0" text="09:00">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="25.0" prefWidth="120.0" text="19/09/2022" />
+                              <Label alignment="CENTER" layoutX="60.0" layoutY="25.0" prefWidth="120.0" text="izri zakaria" />
+                              <Label alignment="CENTER" layoutX="230.0" layoutY="25.0" prefWidth="120.0" text="0696224886" />
+                              <Label alignment="CENTER" layoutX="280.0" layoutY="24.0" prefWidth="150.0" text="Détartrage" />
+                              <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/878604_edit_512x512.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView fitHeight="33.0" fitWidth="35.0" layoutX="430.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/unnamed.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <Pane fx:id="pane22" layoutX="14.0" layoutY="160.0" prefHeight="65.0" prefWidth="150.0" styleClass="pane14" stylesheets="@styled.css">
+         <children>
+            <Circle fill="WHITE" layoutX="30.0" layoutY="32.0" radius="18.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <FontAwesomeIconView fill="#f2be40" glyphName="USER" layoutX="26.0" layoutY="37.0" selectionFill="#fe8c4e" />
+            <Label fx:id="label22" layoutX="66.0" layoutY="6.0" styleClass="label12" stylesheets="@../com/example/kadent/styled.css" text="5&#10;RDV&#10;" textFill="#754f4f" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane211" layoutX="14.0" layoutY="258.0" prefHeight="65.0" prefWidth="150.0" styleClass="pane22" stylesheets="@styled.css">
+         <children>
+            <Circle fill="WHITE" layoutX="30.0" layoutY="35.0" radius="18.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <FontAwesomeIconView fill="#fe8c4e" glyphName="SPINNER" layoutX="25.0" layoutY="39.0" />
+            <Label fx:id="label211" layoutX="57.0" layoutY="2.0" styleClass="label23" stylesheets="@../com/example/kadent/styled.css" text="10&#10;En cours" textFill="#754f4f" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

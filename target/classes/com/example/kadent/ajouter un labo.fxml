@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
+                     <children>
+                        <AnchorPane fx:id="side_ankerpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="side_ankerpane" stylesheets="@add.css">
+                           <children>
+                              <Pane layoutY="531.0" prefHeight="69.0" prefWidth="400.0" styleClass="pane21" stylesheets="@add.css">
+                                 <children>
+                                    <JFXButton layoutX="82.0" layoutY="20.0" prefHeight="29.0" prefWidth="236.0" styleClass="btn1" text="Sauvegarder" />
+                                 </children>
+                              </Pane>
+                              <Text fx:id="txt" fill="WHITE" layoutX="33.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt" text="Ajouter un labo" />
+                              <Line endX="38.0" layoutX="134.0" layoutY="57.0" startX="-100.0" stroke="WHITE" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="375.0" layoutY="21.0" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="MINUS" layoutX="351.0" layoutY="21.0" />
+                              <Pane layoutX="16.0" layoutY="89.0" prefHeight="385.0" prefWidth="368.0" styleClass="pane22">
+                                 <children>
+                                    <Text fill="#9a9393" layoutX="20.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Nom de labo" />
+                                    <TextField layoutX="26.0" layoutY="44.0" prefHeight="25.0" prefWidth="313.0" styleClass="txtfi" />
+                                    <Text fill="#9a9393" layoutX="20.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Adresse de labo" />
+                                    <TextField layoutX="26.0" layoutY="105.0" prefHeight="25.0" prefWidth="313.0" styleClass="txtfi" />
+                                    <Text fill="#9a9393" layoutX="20.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Téléphone" />
+                                    <TextField layoutX="26.0" layoutY="166.0" prefHeight="25.0" prefWidth="313.0" styleClass="txtfi" />
+                                    <Text fill="#9a9393" layoutX="23.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Type" />
+                                    <TextField layoutX="29.0" layoutY="220.0" prefHeight="25.0" prefWidth="139.0" styleClass="txtfi" />
+                                    <Text fill="#9a9393" layoutX="183.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Prix" />
+                                    <TextField layoutX="189.0" layoutY="221.0" prefHeight="25.0" prefWidth="147.0" styleClass="txtfi" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

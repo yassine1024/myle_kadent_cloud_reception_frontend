@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kadent.Message">
+   <children>
+      <Pane layoutY="-6.0" prefHeight="406.0" prefWidth="247.0" styleClass="side_ankerpane2" stylesheets="@styled.css">
+         <children>
+            <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="15.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img/profil.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label" layoutX="65.0" layoutY="37.0" styleClass="label28" stylesheets="@add.css" text="zaki" />
+            <Label layoutX="60.0" layoutY="56.0" styleClass="label27" stylesheets="@add.css" text="salem, j'éspére que tu vas bien." />
+            <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="15.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img/profil.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label1" layoutX="65.0" layoutY="99.0" styleClass="label28" stylesheets="@add.css" text="zaki" />
+            <Label layoutX="60.0" layoutY="118.0" styleClass="label27" stylesheets="@add.css" text="salem, j'éspére que tu vas bien." />
+            <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="15.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img/profil.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label11" layoutX="65.0" layoutY="158.0" styleClass="label28" stylesheets="@add.css" text="zaki" />
+            <Label layoutX="60.0" layoutY="177.0" styleClass="label27" stylesheets="@add.css" text="salem, j'éspére que tu vas bien." />
+            <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="15.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img/profil.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label111" layoutX="65.0" layoutY="216.0" styleClass="label28" stylesheets="@add.css" text="zaki" />
+            <Label layoutX="60.0" layoutY="235.0" styleClass="label27" stylesheets="@add.css" text="salem, j'éspére que tu vas bien." />
+         </children>
+      </Pane>
+      <Pane layoutX="250.0" layoutY="358.0" prefHeight="42.0" prefWidth="400.0" styleClass="pane21" stylesheets="@add.css">
+         <children>
+            <TextField prefHeight="42.0" prefWidth="313.0" styleClass="txt" stylesheets="@styled.css" />
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="326.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img/icons8-email-send-90.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="311.0" layoutY="78.0" prefHeight="42.0" prefWidth="196.0" styleClass="pane2" stylesheets="@add.css">
+         <children>
+            <Label layoutX="14.0" styleClass="label41" text="jshdfkjskj lkhdfglh lh lk dfgdfhhdh&#10;&#10;&#10;" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="257.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../img/profil.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label2" layoutX="307.0" layoutY="52.0" styleClass="label28" stylesheets="@add.css" text="zaki" />
+      <Pane layoutX="311.0" layoutY="285.0" prefHeight="42.0" prefWidth="196.0" styleClass="pane2" stylesheets="@add.css">
+         <children>
+            <Label layoutX="14.0" styleClass="label41" text="jshdfkjskj lkhdfglh lh lk dfgdfhhdh&#10;&#10;&#10;" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="257.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../img/profil.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label21" layoutX="307.0" layoutY="259.0" styleClass="label28" stylesheets="@add.css" text="zaki" />
+      <Pane layoutX="397.0" layoutY="189.0" prefHeight="42.0" prefWidth="196.0" styleClass="pane28" stylesheets="@add.css">
+         <children>
+            <Label layoutX="14.0" styleClass="label41" text="jshdfkjskj lkhdfglh lh lk dfgdfhhdh&#10;&#10;&#10;" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="602.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../img/profil.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label22" layoutX="551.0" layoutY="160.0" styleClass="label28" stylesheets="@add.css" text="zaki" />
+   </children>
+</AnchorPane>

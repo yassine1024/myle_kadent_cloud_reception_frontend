@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutY="1.0" prefHeight="601.0" prefWidth="444.0" styleClass="side_ankerpane1" stylesheets="@styled.css">
+         <children>
+            <ImageView fitHeight="333.0" fitWidth="464.0" layoutX="6.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img/5495572.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Line endX="27.0999755859375" layoutX="582.0" layoutY="176.0" startX="-100.0" stroke="#28a7c4" />
+      <Label layoutX="482.0" layoutY="135.0" styleClass="txt25" stylesheets="@styled.css" text="Login" />
+      <TextField layoutX="487.0" layoutY="207.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Nom et prénom" />
+      <FontAwesomeIconView glyphName="USER" layoutX="470.0" layoutY="223.0" />
+      <TextField layoutX="487.0" layoutY="277.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Mot de passe" />
+      <FontAwesomeIconView glyphName="KEY" layoutX="468.0" layoutY="293.0" />
+      <JFXButton fx:id="btn" layoutX="513.0" layoutY="354.0" prefHeight="31.0" prefWidth="194.0" styleClass="btn" stylesheets="@add.css" text="Login" />
+   </children>
+</AnchorPane>

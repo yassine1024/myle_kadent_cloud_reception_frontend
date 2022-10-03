@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
+               <children>
+                  <AnchorPane fx:id="side_ankerpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="side_ankerpane" stylesheets="@add.css">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="87.0" prefHeight="170.0" prefWidth="368.0" styleClass="pane22">
+                           <children>
+                              <Text fill="#9a9393" layoutX="23.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Créé le 15/09/2022" />
+                              <Text fill="#9a9393" layoutX="49.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Ajouter votre cabinet" />
+                              <Text layoutX="22.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt1" text="INV00001" />
+                              <ImageView fitHeight="19.0" fitWidth="14.0" layoutX="313.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+                                 <image>
+                                    <Image url="@../../../../../img/1024px-OOjs_UI_icon_expand.svg.png" />
+                                 </image>
+                              </ImageView>
+                              <Text layoutX="50.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt12" text="De" />
+                              <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="23.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../img/icons8-user-square-96.png" />
+                                 </image>
+                              </ImageView>
+                              <Text layoutX="49.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt12" text="Facturé à" />
+                              <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="22.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../img/icons8-right-button-96.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="21.0" layoutY="264.0" prefHeight="259.0" prefWidth="368.0" styleClass="pane22">
+                           <children>
+                              <Text layoutX="42.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt12" text="Articles" />
+                              <Pane layoutX="10.0" layoutY="50.0" prefHeight="44.0" prefWidth="345.0" styleClass="pane23">
+                                 <children>
+                                    <Text layoutX="18.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt22" text="Composite" />
+                                    <Text layoutX="248.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt22" text="2.00 x 5000.00 DA" />
+                                    <Text layoutX="261.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt223" text="10000.00 DA" />
+                                 </children>
+                              </Pane>
+                              <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../img/icons8-add-shopping-cart-96.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="10.0" layoutY="151.0" prefHeight="27.0" prefWidth="345.0" styleClass="pane23">
+                                 <children>
+                                    <Text fill="#9a9393" layoutX="57.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt2" text="Ajouter un article" />
+                                    <Circle layoutX="35.0" layoutY="15.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="30.0" layoutY="20.0" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="100.0" prefHeight="44.0" prefWidth="345.0" styleClass="pane23">
+                                 <children>
+                                    <Text layoutX="18.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt22" text="Composite" />
+                                    <Text layoutX="248.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt22" text="2.00 x 5000.00 DA" />
+                                    <Text layoutX="261.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt223" text="10000.00 DA" />
+                                 </children>
+                              </Pane>
+                              <Text layoutX="42.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt12" text="Frais de transport" />
+                              <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="15.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../img/icons8-delivery-100.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="19.0" fitWidth="14.0" layoutX="314.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+                                 <image>
+                                    <Image url="@../../../../../img/1024px-OOjs_UI_icon_expand.svg.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutY="225.0" prefHeight="34.0" prefWidth="368.0" styleClass="pane233">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="8.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt12" text="Montant total" />
+                                    <Text fill="WHITE" layoutX="258.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt122" text="20000.00 DA" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane layoutY="531.0" prefHeight="69.0" prefWidth="400.0" styleClass="pane21" stylesheets="@add.css">
+                           <children>
+                              <JFXButton layoutX="20.0" layoutY="22.0" prefHeight="26.0" prefWidth="124.0" styleClass="btn" text="Aperçu" />
+                              <JFXButton layoutX="153.0" layoutY="21.0" prefHeight="29.0" prefWidth="236.0" styleClass="btn1" text="SAUVER" />
+                           </children>
+                        </Pane>
+                        <Text fx:id="txt" fill="WHITE" layoutX="33.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt" text="Ajouter une commende" />
+                        <Line endX="109.0" layoutX="134.0" layoutY="57.0" startX="-100.0" stroke="WHITE" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="374.0" layoutY="18.0" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="MINUS" layoutX="350.0" layoutY="18.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <ScrollBar orientation="VERTICAL" prefHeight="600.0" prefWidth="14.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

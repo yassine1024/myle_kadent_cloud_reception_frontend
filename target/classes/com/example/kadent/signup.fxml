@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="360.0" prefHeight="601.0" prefWidth="440.0" styleClass="side_ankerpane1" stylesheets="@styled.css">
+         <children>
+            <ImageView fitHeight="333.0" fitWidth="464.0" layoutX="9.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img/5495572.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Line endX="27.0999755859375" layoutX="136.0" layoutY="74.0" startX="-100.0" stroke="#28a7c4" />
+      <Label layoutX="36.0" layoutY="33.0" styleClass="txt25" stylesheets="@styled.css" text="S'inscrire" />
+      <TextField layoutX="41.0" layoutY="105.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Nom et prénom" AnchorPane.leftAnchor="40.0" />
+      <FontAwesomeIconView glyphName="USER" layoutX="24.0" layoutY="121.0" AnchorPane.leftAnchor="20.0" />
+      <TextField layoutX="39.0" layoutY="163.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Spécialité" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="170.0" />
+      <FontAwesomeIconView glyphName="BOOK" layoutX="25.0" layoutY="186.2857141494751" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="176.0" />
+      <TextField layoutX="37.0" layoutY="230.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Tél:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="230.0" />
+      <FontAwesomeIconView glyphName="PHONE" layoutX="25.0" layoutY="246.2857141494751" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="236.0" />
+      <TextField layoutX="31.0" layoutY="311.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Mail Ex: mohamed@gmail.com" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="290.0" />
+      <FontAwesomeIconView glyphName="ENVELOPE" layoutX="25.0" layoutY="306.2857141494751" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="296.0" />
+      <TextField layoutX="37.0" layoutY="363.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Mot de passe" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="350.0" />
+      <FontAwesomeIconView glyphName="KEY" layoutX="25.0" layoutY="366.2857141494751" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="356.0" />
+      <TextField layoutX="31.0" layoutY="426.0" prefHeight="25.0" prefWidth="270.0" styleClass="txt" stylesheets="@styled.css" text="Confirmation le mot de passe" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="410.0" />
+      <FontAwesomeIconView glyphName="KEY" layoutX="25.0" layoutY="425.2857141494751" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="415.0" />
+      <JFXButton fx:id="btn" layoutX="78.0" layoutY="483.0" prefHeight="31.0" prefWidth="194.0" styleClass="btn" stylesheets="@add.css" text="S'inscrire" />
+   </children>
+</AnchorPane>

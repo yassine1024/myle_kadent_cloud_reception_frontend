@@ -48,7 +48,7 @@ public class Test extends Application {
         primaryStage.setScene(new Scene(root, 300, 250));
         primaryStage.show();
 		*/
-		String ifLoged="/com/example/kadent/nouvel article.fxml";
+		String ifLoged="/com/example/kadent/RDV.fxml";
         Parent root = FXMLLoader.load(getClass().getResource(ifLoged));
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		Scene scene = new Scene(root);

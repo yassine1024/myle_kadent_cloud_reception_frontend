@@ -1,4 +1,4 @@
-package src.cabinet;
+package cabinet;
 
 
 

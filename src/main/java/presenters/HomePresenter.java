@@ -1,7 +1,7 @@
-package src.presenters;
+package presenters;
 
-import src.cabinet.Cabinet;
-import src.cabinet.CabinetService;
+import cabinet.Cabinet;
+import cabinet.CabinetService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

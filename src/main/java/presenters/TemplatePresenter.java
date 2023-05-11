@@ -1,4 +1,4 @@
-package src.presenters;
+package presenters;
 
 
 import com.google.inject.Inject;

@@ -4,11 +4,13 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
-
+import java.io.IOException;
 
 
 public class TemplateControllerImpl implements TemplateController{
@@ -46,7 +48,41 @@ public class TemplateControllerImpl implements TemplateController{
 
     @Override
     @FXML
-    public void showDashboard(ActionEvent event) {
-        
+    public void showDashboard(ActionEvent event)  {
+
+        this.switchBetweenViews("/views/dashboard.fxml");
+
     }
+
+
+    @Override
+    @FXML
+    public void showQueue(ActionEvent event) {
+        this.switchBetweenViews("/views/salle_attente.fxml");
+    }
+
+
+    private void switchBetweenViews(String pathFile){
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(pathFile));
+        AnchorPane centerView=null;
+        try {
+            centerView = loader.load();
+
+        }catch (IOException exception){
+
+            System.out.println(exception.getMessage());
+        }
+        this.updateView(centerView);
+    }
+
+    private void updateView(AnchorPane centerView) {
+
+        if(!centerStackPane.getChildren().isEmpty()) {
+            centerStackPane.getChildren().remove(0);
+        }
+        centerStackPane.getChildren().add(centerView);
+    }
+
+
 }

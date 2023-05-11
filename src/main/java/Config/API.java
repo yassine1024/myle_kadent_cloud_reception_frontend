@@ -1,4 +1,4 @@
-package src.Config;
+package Config;
 
 public enum API {
 

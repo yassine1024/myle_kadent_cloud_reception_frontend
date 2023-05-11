@@ -7,5 +7,5 @@ public interface TemplateController {
 
 
     void showDashboard(ActionEvent event);
-
+    void showQueue(ActionEvent event);
     }

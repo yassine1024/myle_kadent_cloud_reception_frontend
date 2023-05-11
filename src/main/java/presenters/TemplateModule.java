@@ -1,8 +1,8 @@
-package src.presenters;
+package presenters;
 
+import cabinet.CabinetService;
 import com.google.inject.AbstractModule;
-import src.cabinet.CabinetService;
-import src.cabinet.CabinetServiceImpl;
+import cabinet.CabinetServiceImpl;
 import views.TemplateController;
 import views.TemplateControllerImpl;
 

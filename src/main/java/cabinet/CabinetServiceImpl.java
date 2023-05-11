@@ -1,6 +1,6 @@
-package src.cabinet;
+package cabinet;
 
-import src.Config.API;
+import Config.API;
 
 import retrofit2.Call;
 import retrofit2.Callback;

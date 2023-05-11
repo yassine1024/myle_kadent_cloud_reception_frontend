@@ -1,0 +1,170 @@
+.homeAnchor {
+    -fx-background-color:  #16181b;
+    }
+.homeAnchor1 {
+    -fx-background-color:  #16181b;
+    -fx-border-color: WHITE;
+    }
+
+.menuItem:hover{
+    -fx-border-color: #660099;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+.sidebarItem{
+    -fx-background-color: #292d32;
+
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+        -fx-fill: #fff;
+        -fx-text-fill: #fff;
+
+}
+.sidebarItem:hover{
+    -fx-background-color: #146886;
+    -fx-border-color: WHITE;
+    -fx-border-width: 0px 0px 0px 5px;
+    -fx-cursor: hand;
+}
+.slider1 {
+-fx-background-color:  #292d32;
+}
+.topAnchor {
+    -fx-background-color:   #2A1F2D;
+    -fx-background-radius: 0px 50px 0px 0px;
+    }
+    .pane3 {
+      -fx-background-color:  #292D32;
+
+           -fx-background-radius: 50px 0px 0px 0px;
+    }
+
+.anchorPane{
+ -fx-background-color:  #292D32;
+
+           -fx-background-radius: 0px 0px 0px 20px;
+}
+.pane1 {
+   -fx-background-color: linear-gradient(to top, #232428, #1d202b);
+   -fx-border-radius: 30px 30px 30px 30px;
+        -fx-background-radius: 30px 30px 30px 30px;
+        -fx-border-style: solid;
+        -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.9), 10.0 , 0 , 0 ,0);}
+
+.pane2 {
+   -fx-background-color: linear-gradient(to right top, #5d60e6, #232428 );
+    -fx-border-color: linear-gradient(to right top, #5d60e6, #232428 );
+
+        -fx-border-radius: 20px;
+        -fx-background-radius: 20px;
+        -fx-border-style: solid;
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.9), 10.0 , 0 , 0 ,0);
+    }
+.pane2:hover{
+    -fx-background-color: linear-gradient(to left bottom, #5d60e6, #232428 );
+    -fx-border-color: WHITE;
+    -fx-border-width: 1px 1px 1px 1px;
+}
+
+
+.pane21 {
+   -fx-background-color: linear-gradient(to left top, #ffc059, #232428 );
+    -fx-border-color: linear-gradient(to left top, #ffc059, #232428 );
+
+        -fx-border-radius: 20px;
+        -fx-background-radius: 20px;
+        -fx-border-style: solid;
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.9), 10.0 , 0 , 0 ,0);
+    }
+.pane21:hover{
+    -fx-background-color: linear-gradient(to right bottom, #ffc059, #232428 );
+    -fx-border-color: WHITE;
+    -fx-border-width: 1px 1px 1px 1px;
+}
+.label12{
+        -fx-font-weight: bold;
+        -fx-font-size: 20px;
+        -fx-text-fill: #fff;
+
+}
+
+.label2{
+        -fx-font-weight: bold;
+        -fx-font-size: 12px;
+        -fx-text-fill: #fff;
+}
+
+.label22{
+        -fx-font-weight: bold;
+        -fx-font-size: 12px;
+        -fx-text-fill: #fff;
+}
+.label223{
+        -fx-font-weight: bold;
+        -fx-font-size: 12px;
+        -fx-text-fill: #d2d4d8;
+}
+.icon:hover{
+    -fx-fill: #000;}
+
+.side_ankerpane:hover {
+    -fx-border-color: WHITE;
+    -fx-border-radius: 20px;
+
+     -fx-border-width: 1px 1px 1px 1px;}
+
+ .btn_home {
+     -fx-background-color: #fff;
+     -fx-border-color: #fff;
+
+     -fx-border-radius: 10px;
+     -fx-background-radius: 10px;
+     -fx-font-weight: bold;
+     -fx-font-size: 15px;
+
+     -fx-label-padding: 0 35px 0 0;
+
+     }
+ .btn {
+ -fx-background-color: linear-gradient(to right top, #5d60e6, #232428 );
+     -fx-border-color: linear-gradient(to right top, #5d60e6, #232428 );
+
+
+         -fx-border-style: solid;
+     -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.9), 10.0 , 0 , 0 ,0);
+
+
+     -fx-border-radius: 10px;
+     -fx-background-radius: 10px;
+     -fx-font-weight: bold;
+     -fx-font-size: 13px;
+     -fx-fill: #FFF;
+     -fx-text-fill: #FFF;
+     -fx-label-padding: 0 0px 0 0px;
+
+     }
+ .btn:hover{
+    -fx-background-color: linear-gradient(to left bottom, #5d60e6, #232428 );
+        -fx-border-color: WHITE;
+        -fx-border-width: 1px 1px 1px 1px;
+
+     -fx-text-fill: #fff;
+     -fx-fill: #fff;}
+ .btn:pressed{
+     -fx-background-color: linear-gradient(to left, #A57AFD, #C5ABFC);
+     -fx-text-fill: #fff;
+     -fx-fill: #fff;}
+
+ .txt21 {
+     -fx-fill: WHITE;
+     -fx-font-weight: bold;
+     -fx-font-size: 15px;}
+ .transparent{
+     -fx-background-color:  #16181b;
+     -fx-background-radius: 00px;
+     -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.3), 5.0 , 0.0 , 1.0 ,0.0);
+     }
+ .transparent2{
+     -fx-background-color: linear-gradient(to top, #232428, #1d202b);
+     -fx-background-radius: 20px;
+     -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.3), 5.0 , 0.0 , 1.0 ,0.0);
+     }

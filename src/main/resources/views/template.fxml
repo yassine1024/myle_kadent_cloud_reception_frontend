@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="homeAnchor" stylesheets="@css/dark_theme/Stylenew.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TemplateControllerImpl">
+   <children>
+      <BorderPane prefHeight="700.0" prefWidth="1000.0">
+         <top>
+            <AnchorPane prefHeight="82.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="-2.0" prefHeight="84.0" prefWidth="152.0" styleClass="pane3">
+                     <children>
+                        <ImageView fitHeight="63.0" fitWidth="121.0" layoutX="16.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Capture-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+                  <Pane layoutX="150.0" prefHeight="39.0" prefWidth="850.0" styleClass="topAnchor">
+                     <children>
+                        <Label layoutX="178.0" layoutY="-4.0" prefHeight="39.0" prefWidth="258.0" text="Make Your Life Easy " textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox layoutX="730.0" layoutY="9.0" prefHeight="25.0" prefWidth="86.0">
+                           <children>
+                              <fx:include source="LoginBar.fxml" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="797.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/profil.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="label" layoutX="844.0" layoutY="52.0" text="Admin" textFill="WHITE" />
+                  <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="893.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8-expand-arrow-90%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <FontAwesomeIcon  fill="WHITE" iconName="BELL" layoutX="742.0" layoutY="65.0" size="1.5em" />
+                  <Label fx:id="tasksLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="752.0" layoutY="42.0" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: red; -fx-background-radius: 25;" text="1" textAlignment="CENTER" textFill="#070707">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fill="WHITE" iconName="ENVELOPE" layoutX="683.0" layoutY="64.0" selectionStart="1" size="1.5em" />
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="slider" prefHeight="362.0" prefWidth="150.0" style="-fx-background-color: #292D32;" styleClass="anchorPane" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="slider1" prefHeight="617.0" prefWidth="132.0" styleClass="anchorPane">
+                     <children>
+                        <VBox layoutX="-2.0" layoutY="-1.0" prefHeight="615.0" prefWidth="151.0">
+                           <children>
+                              <JFXButton fx:id="dashboardMenu" alignment="CENTER" contentDisplay="TOP" graphicTextGap="20.0" onAction="#showDashboard" prefHeight="100.0" prefWidth="151.0" styleClass="sidebarItem" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="HOME" size="1.5em" wrappingWidth="30.0" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </JFXButton>
+                              <JFXButton fx:id="paymentMenu" alignment="CENTER" contentDisplay="TOP" graphicTextGap="20.0" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="176.0" styleClass="sidebarItem" text="Paiement" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="MONEY" size="1.5em" wrappingWidth="30.0" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="queueMenu" alignment="CENTER" contentDisplay="TOP" graphicTextGap="20.0" layoutX="10.0" layoutY="48.0" prefHeight="100.0" prefWidth="176.0" styleClass="sidebarItem" text="Salle d'attente" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="BED" size="1.5em" wrappingWidth="30.0" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="appointementMenu" alignment="CENTER" contentDisplay="TOP" graphicTextGap="20.0" layoutX="10.0" layoutY="86.0" prefHeight="100.0" prefWidth="176.0" styleClass="sidebarItem" text="Gestion des RDV" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="CALENDAR" size="1.5em" wrappingWidth="30.0" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton alignment="CENTER" contentDisplay="TOP" graphicTextGap="20.0" layoutX="10.0" layoutY="310.0" prefHeight="100.0" prefWidth="176.0" styleClass="sidebarItem" text="Affichage " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="DESKTOP" size="1.5em" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="configMenu" alignment="CENTER" contentDisplay="TOP" graphicTextGap="20.0" layoutX="10.0" layoutY="124.0" prefHeight="100.0" prefWidth="176.0" styleClass="sidebarItem" text="Paramètre" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="COGS" size="1.5em" wrappingWidth="30.0" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <StackPane fx:id="centerStackPane" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

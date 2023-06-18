@@ -17,5 +17,6 @@ public interface RendezvousController {
     void goToPreviousWeek(MouseEvent event);
 
     void maximizeAgenda(MouseEvent event);
+    public void addRendezvous(MouseEvent event);
 
 }

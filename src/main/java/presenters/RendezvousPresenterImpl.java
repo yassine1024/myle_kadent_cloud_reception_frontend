@@ -45,6 +45,11 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
 
     }
 
+    @Override
+    public void addRendezvous(String date, String time, String patient) {
+
+    }
+
     public void handleError(Throwable t) {
     }
 

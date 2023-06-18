@@ -30,4 +30,18 @@ public class RendezvousServiceImpl implements RendezvousService{
         call.enqueue(callback);
 
     }
+
+    @Override
+    public void addRendezvous(Call<Rendezvous> callback, String date, String time, String patient) {
+
+        Rendezvous rendezvous = new Rendezvous();
+        rendezvous.setDate(date);
+        rendezvous.setTime(time);
+        rendezvous.setPatient(patient);
+
+        Call<Rendezvous> call= rendezvousAPI.addRendezvous()
+
+    }
+
+
 }

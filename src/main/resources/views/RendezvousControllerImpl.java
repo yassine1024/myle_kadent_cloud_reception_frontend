@@ -17,6 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import jfxtras.internal.scene.control.skin.agenda.AgendaDaySkin;
 import jfxtras.scene.control.agenda.Agenda;
+import presenters.RendezvousModule;
 import presenters.RendezvousPresenter;
 import rendezvous.Rendezvous;
 
@@ -138,6 +139,14 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
         Stage stage =(Stage) this.agendaStackPane.getScene().getWindow();
 
        new  FullScene().fullScene(this.getCopyFromAgendaStackPane(), stage);
+    }
+
+    @Override
+    @FXML
+    public void addRendezvous(MouseEvent event) {
+
+        new FullScene().displayWindow("/views/addRendezvous.fxml", new RendezvousModule());
+
     }
 
     private StackPane getCopyFromAgendaStackPane(){

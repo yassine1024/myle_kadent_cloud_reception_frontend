@@ -45,6 +45,12 @@
             <version>9.0.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.github.palexdev</groupId>
+            <artifactId>materialfx</artifactId>
+            <version>11.16.1</version>
+        </dependency>
+
         <!-- Add javaFX libraries -->
 
         <dependency>

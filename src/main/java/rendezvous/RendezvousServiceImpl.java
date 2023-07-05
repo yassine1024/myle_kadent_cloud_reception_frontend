@@ -2,6 +2,7 @@ package rendezvous;
 
 import Config.API;
 import cabinet.CabinetAPI;
+import patient.Patient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -32,14 +33,15 @@ public class RendezvousServiceImpl implements RendezvousService{
     }
 
     @Override
-    public void addRendezvous(Call<Rendezvous> callback, String date, String time, String patient) {
+    public void addRendezvous(Callback<Void> callback, String date, String time, Patient patient) {
 
         Rendezvous rendezvous = new Rendezvous();
         rendezvous.setDate(date);
         rendezvous.setTime(time);
         rendezvous.setPatient(patient);
 
-        Call<Rendezvous> call= rendezvousAPI.addRendezvous()
+        Call<Void> call= rendezvousAPI.addRendezvous(patient.getId(),rendezvous);
+        call.enqueue(callback);
 
     }
 

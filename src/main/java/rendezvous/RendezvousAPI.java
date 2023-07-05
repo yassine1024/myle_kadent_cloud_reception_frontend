@@ -16,7 +16,7 @@ public interface RendezvousAPI {
     public Call<Rendezvous> getRendezvous(@Path("id") Long id);
 
     @POST("patients/{patientId}/rendezvous")
-    public Call<Rendezvous> addRendezvous(@Path("patientId") String patientId, @Body Rendezvous rendezvous) ;
+    public Call<Void> addRendezvous(@Path("patientId") String patientId, @Body Rendezvous rendezvous) ;
 
     @PUT("patients/{patientId}/rendezvous/{id}")
     public Call<Rendezvous> updateRendezvous(@Path("id") String id, @Path("patientId") String patientId,

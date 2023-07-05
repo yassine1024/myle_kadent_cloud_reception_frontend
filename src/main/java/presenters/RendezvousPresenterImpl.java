@@ -2,6 +2,7 @@ package presenters;
 
 import com.google.inject.Inject;
 
+import patient.Patient;
 import rendezvous.Rendezvous;
 import rendezvous.RendezvousService;
 import retrofit2.Call;
@@ -46,8 +47,33 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
     }
 
     @Override
-    public void addRendezvous(String date, String time, String patient) {
+    public void addRendezvous(String date, String time, Patient patient) {
 
+        this.rendezvousService.addRendezvous(
+                new Callback<Void>() {
+
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        handleAddRendezvousResponse(response);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        handleAddRendezvousError(t);
+                    }
+                }
+
+
+                , date, time, patient);
+
+    }
+
+    public void handleAddRendezvousError(Throwable t) {
+        System.out.println(t.getMessage());
+    }
+
+    public void handleAddRendezvousResponse(Response<Void> response) {
+        System.out.println("Success");
     }
 
     public void handleError(Throwable t) {

@@ -1,16 +1,27 @@
 package views;
 
+import Config.AutocompleteSuggestion;
 import com.google.inject.Inject;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
 import patient.Patient;
 import presenters.RendezvousPresenter;
 
-public class addRendezvousControllerImpl implements addRendezvousController{
+import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class addRendezvousControllerImpl implements addRendezvousController, Initializable {
 
 
 
@@ -19,8 +30,9 @@ public class addRendezvousControllerImpl implements addRendezvousController{
     @FXML
     private MFXDatePicker dateRdv;
 
+
     @FXML
-    private MFXTextField patientTextField;
+    private TextField patientTextField;
 
     @FXML
     private TextField timeRdv;
@@ -44,4 +56,12 @@ public class addRendezvousControllerImpl implements addRendezvousController{
         System.out.println("date: "+date+" time: "+time+" for patient: "+patient);
 
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<String> suggestionList = Arrays.asList("Apple", "Banana", "Orange", "Pineapple", "Mango");
+        TextFields.bindAutoCompletion(this.patientTextField, FXCollections.observableList(suggestionList));
+    }
+
+
 }

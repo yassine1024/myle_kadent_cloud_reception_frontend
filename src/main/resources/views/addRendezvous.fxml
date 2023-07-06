@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
-<?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,6 +14,6 @@
       <TextField fx:id="timeRdv" layoutX="337.0" layoutY="296.0" prefHeight="42.0" prefWidth="200.0" />
       <JFXButton layoutX="508.0" layoutY="414.0" onAction="#addRendezvous" text="Ajouter" />
       <MFXDatePicker fx:id="dateRdv" layoutX="329.0" layoutY="207.0" prefHeight="38.0" prefWidth="225.0" />
-      <MFXTextField fx:id="patientTextField" layoutX="329.0" layoutY="125.0" prefHeight="42.0" prefWidth="225.0" />
+      <TextField fx:id="patientTextField" layoutX="329.0" layoutY="129.0" prefHeight="38.0" prefWidth="225.0" />
    </children>
 </AnchorPane>

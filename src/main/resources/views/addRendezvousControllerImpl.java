@@ -1,6 +1,5 @@
 package views;
 
-import Config.AutocompleteSuggestion;
 import com.google.inject.Inject;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.materialfx.controls.MFXTextField;

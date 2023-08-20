@@ -1,0 +1,25 @@
+/* Customize the overall Agenda */
+.Agenda {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #c0c0c0;
+}
+
+/* Customize the header area */
+.Agenda .header {
+    -fx-background-color: #e0e0e0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Customize the time cell area */
+.Agenda .time-cell {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #c0c0c0;
+    -fx-font-size: 12px;
+}
+
+/* Customize the appointment area */
+.Agenda .appointment {
+    -fx-background-color: #a0a0a0;
+    -fx-text-fill: white;
+}

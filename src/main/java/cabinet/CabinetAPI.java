@@ -1,6 +1,8 @@
 package cabinet;
 
 
+import employee.medecin.Medecin;
+import patient.Patient;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -22,4 +24,11 @@ public interface CabinetAPI {
 
     @DELETE("{id}")
     Call<Cabinet> deleteCabinet(@Path("id") String id);
-}
+
+    @GET("{id}/patients")
+    public Call<List<Patient>> getPatientsByCabinet(@Path("id") String id);
+
+    @GET("{id}/medecins")
+    public Call<List<Medecin>> getDoctorsByCabinet(@Path("id") String id);
+
+    }

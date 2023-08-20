@@ -47,7 +47,7 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         this.intializeAgenda();
-        this.presenter.getAllAppointment();
+        //this.presenter.getAllAppointment();
 
     }
 

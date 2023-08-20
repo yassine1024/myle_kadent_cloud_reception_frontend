@@ -1,0 +1,22 @@
+/* Customize the MFXDatePicker */
+/*.mfx-date-picker {
+    -fx-background-color: blue;
+    -fx-border-color: green;
+}
+
+*//* Customize the text area where the selected date is displayed *//*
+.mfx-date-picker .text-field {
+    -fx-background-color: yellow;
+}
+
+*//* Customize the date picker popup *//*
+.mfx-date-picker .date-picker-popup .mfx-date-cell{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+
+}*/
+
+.mfx-date-picker .date-picker-popup .content{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}

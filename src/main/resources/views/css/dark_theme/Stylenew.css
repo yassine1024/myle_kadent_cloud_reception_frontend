@@ -156,6 +156,7 @@
 
  .txt21 {
      -fx-fill: WHITE;
+     -fx-text-fill: WHITE;
      -fx-font-weight: bold;
      -fx-font-size: 15px;}
  .transparent{

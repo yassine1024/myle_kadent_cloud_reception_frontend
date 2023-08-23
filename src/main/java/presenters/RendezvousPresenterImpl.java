@@ -4,6 +4,7 @@ import cabinet.CabinetService;
 import com.google.inject.Inject;
 
 import employee.medecin.Medecin;
+import javafx.application.Platform;
 import patient.Patient;
 import rendezvous.Rendezvous;
 import rendezvous.RendezvousService;
@@ -14,6 +15,7 @@ import views.RendezvousController;
 import views.addRendezvousController;
 
 import java.util.List;
+import java.util.Map;
 
 public class RendezvousPresenterImpl implements RendezvousPresenter {
 
@@ -56,26 +58,26 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
     }
 
     @Override
-    public void addRendezvous(String date, String time, Patient patient) {
-
+    public void addRendezvous(Rendezvous rendezvous) {
         this.rendezvousService.addRendezvous(
-                new Callback<Void>() {
+                new Callback<Map<String, String>>() {
 
                     @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
+                    public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
                         handleAddRendezvousResponse(response);
                     }
 
                     @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
+                    public void onFailure(Call<Map<String, String>> call, Throwable t) {
                         handleAddRendezvousError(t);
                     }
                 }
 
 
-                , date, time, patient);
+                ,rendezvous);
 
     }
+
 
     @Override
     public void getPatientsByCabinet(String id) {
@@ -146,8 +148,13 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
         System.out.println(t.getMessage());
     }
 
-    public void handleAddRendezvousResponse(Response<Void> response) {
-        System.out.println("Success");
+    public void handleAddRendezvousResponse(Response<Map<String, String>> response) {
+        System.out.println("yassine"+response.body().get("value"));
+
+        Platform.runLater(() -> {
+            // Update UI components here
+            this.rendezvousController.updateView(response.body().get("value"));
+        });
     }
 
     public void handleError(Throwable t) {

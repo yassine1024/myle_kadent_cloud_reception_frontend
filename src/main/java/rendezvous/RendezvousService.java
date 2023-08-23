@@ -7,12 +7,13 @@ import retrofit2.http.Body;
 import retrofit2.http.Path;
 
 import java.util.List;
+import java.util.Map;
 
 public interface RendezvousService {
 
 
     public void getAllRendezvous(Callback<List<Rendezvous>> callback);
 
-    public void addRendezvous(Callback<Void> callback, String date, String time, Patient patient) ;
+    public void addRendezvous(Callback<Map<String, String>> callback, Rendezvous rendezvous) ;
 
 }

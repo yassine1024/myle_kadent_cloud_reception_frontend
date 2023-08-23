@@ -1,12 +1,13 @@
 package presenters;
 
 import patient.Patient;
+import rendezvous.Rendezvous;
 
 public interface RendezvousPresenter {
 
     public void getAllAppointment();
 
-    void addRendezvous(String date, String time, Patient patient);
+    void addRendezvous(Rendezvous rendezvous);
 
     void getPatientsByCabinet(String id);
 

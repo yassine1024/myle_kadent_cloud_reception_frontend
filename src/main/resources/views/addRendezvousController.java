@@ -15,4 +15,6 @@ public interface addRendezvousController {
 
 
     void setDoctorsList(List<Medecin> medecins);
+
+    void updateView(String value);
 }

@@ -4,6 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface RendezvousAPI {
 
@@ -16,7 +17,7 @@ public interface RendezvousAPI {
     public Call<Rendezvous> getRendezvous(@Path("id") Long id);
 
     @POST("patients/{patientId}/rendezvous")
-    public Call<Void> addRendezvous(@Path("patientId") String patientId, @Body Rendezvous rendezvous) ;
+    public Call<Map<String, String>> addRendezvous(@Path("patientId") String patientId, @Body Rendezvous rendezvous) ;
 
     @PUT("patients/{patientId}/rendezvous/{id}")
     public Call<Rendezvous> updateRendezvous(@Path("id") String id, @Path("patientId") String patientId,

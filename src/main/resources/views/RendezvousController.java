@@ -1,8 +1,9 @@
 package views;
 
 
+import employee.medecin.Medecin;
+import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
-import presenters.RendezvousPresenter;
 import rendezvous.Rendezvous;
 
 import java.util.List;
@@ -19,4 +20,7 @@ public interface RendezvousController {
     void maximizeAgenda(MouseEvent event);
     public void addRendezvous(MouseEvent event);
 
+    void showScheduleByDoctor(ActionEvent event);
+
+    void setDoctorsList(List<Medecin> medecins);
 }

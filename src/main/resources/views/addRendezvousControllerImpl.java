@@ -161,7 +161,7 @@ public class addRendezvousControllerImpl implements addRendezvousController, Ini
     }
 
     private void intializeDoctorsList() {
-        this.presenter.getMedecinsByCabinet(Const.cabinetId);
+        this.presenter.getMedecinsByCabinet(Const.cabinetId, "addRendezvous");
     }
 
     private void intializePatientsList() {

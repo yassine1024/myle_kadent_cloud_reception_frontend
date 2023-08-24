@@ -1,12 +1,17 @@
 package views;
 
 
+import Config.Const;
 import Config.CreateAppointment;
 import Config.FullScene;
 import com.google.inject.Inject;
 
+import employee.medecin.Medecin;
+import io.github.palexdev.materialfx.controls.MFXComboBox;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -26,6 +31,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class RendezvousControllerImpl implements RendezvousController, Initializable {
 
@@ -35,6 +41,9 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
 
     @FXML
     private StackPane agendaStackPane;
+    @FXML
+    private MFXComboBox<String> doctorsList;
+    private List<Medecin> medecins;
 
 
 
@@ -47,10 +56,14 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         this.intializeAgenda();
+        this.initializeDoctorsList();
         //this.presenter.getAllAppointment();
 
     }
 
+    private void initializeDoctorsList() {
+        this.presenter.getMedecinsByCabinet(Const.cabinetId, "rendezvous");
+    }
 
     @Override
     public void intializeAgenda() {
@@ -147,6 +160,24 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
 
         new FullScene().displayWindow("/views/addRendezvous.fxml", new RendezvousModule());
 
+    }
+
+
+    @Override
+    @FXML
+    public void showScheduleByDoctor(ActionEvent event) {
+
+    }
+
+    @Override
+    public void setDoctorsList(List<Medecin> medecins) {
+
+        this.medecins = medecins;
+        List<String> suggestionList = medecins.stream()
+                .map(medecin -> medecin.getFirstName() + " " + medecin.getLastName())
+                .collect(Collectors.toList());
+
+        this.doctorsList.getItems().addAll(FXCollections.observableList(suggestionList));
     }
 
     private StackPane getCopyFromAgendaStackPane(){

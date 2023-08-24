@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -22,5 +23,6 @@
          </children>
       </AnchorPane>
       <FontAwesomeIcon fill="#fff7f7" iconName="ARROWS_ALT" layoutX="651.0" layoutY="35.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#maximizeAgenda" size="2em" textAlignment="CENTER" wrappingWidth="31.285715103149414" AnchorPane.rightAnchor="17.714284896850586" />
+      <MFXComboBox fx:id="doctorsList" layoutX="54.0" layoutY="6.0" onAction="#showScheduleByDoctor" prefHeight="24.0" prefWidth="157.0" AnchorPane.bottomAnchor="580.0" />
    </children>
 </AnchorPane>

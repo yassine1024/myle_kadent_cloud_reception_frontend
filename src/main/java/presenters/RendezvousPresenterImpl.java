@@ -102,7 +102,7 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
     }
 
     @Override
-    public void getMedecinsByCabinet(String id) {
+    public void getMedecinsByCabinet(String id, String source) {
         System.out.println("farouk");
         try {
 
@@ -123,7 +123,12 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
                                         System.out.println(medecin.getAddress());
                                     }
                             );
-                            rendezvousController.setDoctorsList(medecins);
+                            if(source.equals("rendezvous")){
+                                view.setDoctorsList(medecins);
+                            } else if (source.equals("addRendezvous")) {
+                                rendezvousController.setDoctorsList(medecins);
+                            }
+
 
                         }
                     }

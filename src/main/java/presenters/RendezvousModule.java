@@ -3,6 +3,9 @@ package presenters;
 import cabinet.CabinetService;
 import cabinet.CabinetServiceImpl;
 import com.google.inject.AbstractModule;
+import com.google.inject.Scopes;
+import com.google.inject.Singleton;
+import com.google.inject.name.Names;
 import rendezvous.RendezvousService;
 import rendezvous.RendezvousServiceImpl;
 import views.RendezvousController;
@@ -15,7 +18,8 @@ public class RendezvousModule extends AbstractModule {
     protected void configure() {
 
         bind(RendezvousService.class).to(RendezvousServiceImpl.class);
-        bind(RendezvousController.class).to(RendezvousControllerImpl.class);
+        bind(RendezvousController.class)
+                .to(RendezvousControllerImpl.class).in(Singleton.class);
         bind(RendezvousPresenter.class).to(RendezvousPresenterImpl.class);
 
         bind(CabinetService.class).to(CabinetServiceImpl.class);

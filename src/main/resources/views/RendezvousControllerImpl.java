@@ -4,8 +4,10 @@ package views;
 import Config.Const;
 import Config.CreateAppointment;
 import Config.FullScene;
+import agenda.RendezvousSchedule;
 import com.google.inject.Inject;
 
+import com.google.inject.Singleton;
 import employee.medecin.Medecin;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import javafx.application.Platform;
@@ -16,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -33,6 +36,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
+@Singleton
 public class RendezvousControllerImpl implements RendezvousController, Initializable {
 
     private RendezvousPresenter presenter;
@@ -43,6 +47,8 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     private StackPane agendaStackPane;
     @FXML
     private MFXComboBox<String> doctorsList;
+    @FXML
+    private Label dateLabel;
     private List<Medecin> medecins;
 
 
@@ -55,7 +61,7 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        this.intializeAgenda();
+        //this.intializeAgenda();
         this.initializeDoctorsList();
         //this.presenter.getAllAppointment();
 
@@ -158,14 +164,21 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     @FXML
     public void addRendezvous(MouseEvent event) {
 
-        new FullScene().displayWindow("/views/addRendezvous.fxml", new RendezvousModule());
-
+        new FullScene().displayWindow("/views/addRendezvous.fxml", TemplateControllerImpl.rendezvousModule);
+        this.showScheduleByDoctor(null);
     }
 
 
+    private RendezvousSchedule rendezvousSchedule;
     @Override
     @FXML
     public void showScheduleByDoctor(ActionEvent event) {
+        System.out.println("doctor selected");
+        String medecin = this.doctorsList.getValue().toString();
+
+        this.presenter.getAllRendezvousByDoctor(this.getTheMedecin(medecin).getId());
+
+
 
     }
 
@@ -178,6 +191,40 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
                 .collect(Collectors.toList());
 
         this.doctorsList.getItems().addAll(FXCollections.observableList(suggestionList));
+    }
+
+    private   List<Rendezvous> rendezvous;
+
+    @Override
+    public  List<Rendezvous> getRendezvous() {
+        return rendezvous;
+    }
+
+    @Override
+    public void setRendezvousList(List<Rendezvous> rendezvous) {
+
+
+            this.rendezvous = rendezvous;
+
+        this.rendezvousSchedule = new RendezvousSchedule();
+        this.agendaStackPane
+                .getChildren()
+                .add(rendezvousSchedule.drawSchedule(
+                        this.rendezvous, this
+                ));
+    }
+
+    @Override
+    public void updateDateLabel(String startDate, String endDate) {
+        this.dateLabel.setText(startDate+" -----------> "+endDate);
+    }
+
+    private Medecin getTheMedecin(String fullname) {
+        return this.medecins.stream()
+                .filter(medecin -> (medecin.getFirstName() + " " + medecin.getLastName())
+                        .equals(fullname))
+                .findFirst()
+                .orElse(null);
     }
 
     private StackPane getCopyFromAgendaStackPane(){

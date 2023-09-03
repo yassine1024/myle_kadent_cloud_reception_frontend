@@ -1,0 +1,103 @@
+/*.root {
+    -fx-spacing: 10;
+    -fx-background-color: blue;
+
+}*/
+
+.grid-pane {
+    -fx-padding: 5;
+    -fx-spacing: 5px;
+    -fx-background-color: #f0f0f0;
+}
+
+.cell-box-add {
+    -fx-border-color: gray;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+    -fx-background-color: #e8e8e8;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+    -fx-alignment: center;
+}
+
+.cell-box-header {
+    -fx-border-color: gray;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+    -fx-background-color: #d0d0d0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+}
+.red:hover, .green:hover, .yellow:hover, .blue:hover, .Orange:hover,
+.purple:hover, .brown:hover, .grey:hover, .white:hover, .black:hover, .cell-box-add:hover {
+    cursor: hand;
+}
+.red, .green, .yellow, .blue, .Orange, .purple, .brown, .grey, .white, .black{
+    -fx-border-color: gray;
+    -fx-padding: 5;
+    -fx-margin: 0 0 0 5px;
+    -fx-font-size: 14px;
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+}
+.red{
+    -fx-background-color: #ff6961 ;
+    -fx-fill: #ffffff;
+}
+.green{
+    -fx-background-color: #00cc00 ;
+    -fx-fill: #ffffff;
+}
+.yellow{
+    -fx-background-color: #ffff99 ;
+    -fx-fill: #000000;
+}
+.blue{
+    -fx-background-color: #66b3ff ;
+    -fx-fill: #ffffff;
+}
+.Orange{
+    -fx-background-color: #ff9900 ;
+    -fx-fill: #000000;
+}
+.purple{
+    -fx-background-color: #9933ff ;
+    -fx-fill: #ffffff;
+}
+.brown{
+    -fx-background-color: #8b4513 ;
+    -fx-fill: #ffffff;
+}
+.grey{
+    -fx-background-color: #cccccc ;
+    -fx-fill: #000000;
+}
+.white{
+    -fx-background-color: #ffffff ;
+    -fx-fill: #000000;
+}
+.black{
+    -fx-background-color: #000000 ;
+    -fx-fill: #ffffff;
+}
+
+.cell-box-time {
+    -fx-border-color: gray;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+    -fx-background-color: #d0d0d0;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-min-width: 90px;
+    -fx-max-width: 90px;
+}
+
+.scroll-pane {
+    -fx-background-color: white;
+}

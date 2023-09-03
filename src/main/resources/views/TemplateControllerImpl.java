@@ -67,11 +67,12 @@ public class TemplateControllerImpl implements TemplateController{
     }
 
 
+    public static RendezvousModule rendezvousModule;
     @Override
     @FXML
     public void showRendezvous(ActionEvent event) {
-
-        this.switchBetweenViews("/views/rendezvous.fxml", new RendezvousModule());
+        this.rendezvousModule= new  RendezvousModule();
+        this.switchBetweenViews("/views/rendezvous.fxml", rendezvousModule);
     }
 
 

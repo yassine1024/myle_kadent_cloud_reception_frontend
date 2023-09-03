@@ -62,7 +62,7 @@ public class FullScene {
 
         newStage.initStyle(StageStyle.DECORATED);
         // Show the new stage
-        newStage.show();
+        newStage.showAndWait();
 
     }
 }

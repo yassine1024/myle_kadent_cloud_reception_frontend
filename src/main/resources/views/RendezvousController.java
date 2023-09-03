@@ -23,4 +23,8 @@ public interface RendezvousController {
     void showScheduleByDoctor(ActionEvent event);
 
     void setDoctorsList(List<Medecin> medecins);
+
+    void setRendezvousList(List<Rendezvous> rendezvous);
+    void updateDateLabel(String startDate, String endDate);
+    public List<Rendezvous> getRendezvous();
 }

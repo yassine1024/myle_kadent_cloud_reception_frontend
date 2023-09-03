@@ -46,5 +46,12 @@ public class RendezvousServiceImpl implements RendezvousService{
         call.enqueue(callback);
     }
 
+    @Override
+    public void getAllRendezvousByDoctor(Callback<List<Rendezvous>> callback, String medecinId) {
+
+        Call<List<Rendezvous>> call = rendezvousAPI.getAllRendezvousByDoctor(medecinId);
+        call.enqueue(callback);
+    }
+
 
 }

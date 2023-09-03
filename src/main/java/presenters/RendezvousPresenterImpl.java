@@ -3,6 +3,7 @@ package presenters;
 import cabinet.CabinetService;
 import com.google.inject.Inject;
 
+import com.google.inject.name.Named;
 import employee.medecin.Medecin;
 import javafx.application.Platform;
 import patient.Patient;
@@ -14,6 +15,8 @@ import retrofit2.Response;
 import views.RendezvousController;
 import views.addRendezvousController;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +34,7 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
         this.cabinetService = cabinetService;
         this.view = view;
         this.rendezvousController = rendezvousController;
+        System.out.println("Controller instance: " + this);
 
 
     }
@@ -64,7 +68,7 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
 
                     @Override
                     public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
-                        handleAddRendezvousResponse(response);
+                        handleAddRendezvousResponse(response, rendezvous);
                     }
 
                     @Override
@@ -74,7 +78,7 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
                 }
 
 
-                ,rendezvous);
+                , rendezvous);
 
     }
 
@@ -107,45 +111,67 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
         try {
 
 
-        this.cabinetService.getMedecinsByCabinet(
-                new Callback<List<Medecin>>() {
+            this.cabinetService.getMedecinsByCabinet(
+                    new Callback<List<Medecin>>() {
 
-                    @Override
-                    public void onResponse(Call<List<Medecin>> call, Response<List<Medecin>> response) {
-                        System.out.println("slimane!!!");
-                        if (response.isSuccessful()) {
+                        @Override
+                        public void onResponse(Call<List<Medecin>> call, Response<List<Medecin>> response) {
+                            System.out.println("slimane!!!");
+                            if (response.isSuccessful()) {
 
-                            List<Medecin> medecins = response.body();
-                            System.out.println(medecins.size());
-                            medecins.forEach(
-                                    medecin ->{
-                                        System.out.println(medecin.getRecette());
-                                        System.out.println(medecin.getAddress());
-                                    }
-                            );
-                            if(source.equals("rendezvous")){
-                                view.setDoctorsList(medecins);
-                            } else if (source.equals("addRendezvous")) {
-                                rendezvousController.setDoctorsList(medecins);
+                                List<Medecin> medecins = response.body();
+                                System.out.println(medecins.size());
+                                medecins.forEach(
+                                        medecin -> {
+                                            System.out.println(medecin.getRecette());
+                                            System.out.println(medecin.getAddress());
+                                        }
+                                );
+                                if (source.equals("rendezvous")) {
+                                    view.setDoctorsList(medecins);
+                                } else if (source.equals("addRendezvous")) {
+                                    rendezvousController.setDoctorsList(medecins);
+                                }
+
+
                             }
+                        }
 
+                        @Override
+                        public void onFailure(Call<List<Medecin>> call, Throwable t) {
+                            System.out.println("Error to get list of doctors by cabinet");
+                            System.out.println(t.getMessage());
+                            System.out.println(t.toString());
 
                         }
                     }
+                    , id);
+        } catch (Exception e) {
+            System.out.println("kkkk: " + e.getMessage());
+
+        }
+    }
+
+    @Override
+    public void getAllRendezvousByDoctor(String id) {
+        this.rendezvousService.getAllRendezvousByDoctor(
+                new Callback<List<Rendezvous>>() {
+                    @Override
+                    public void onResponse(Call<List<Rendezvous>> call, Response<List<Rendezvous>> response) {
+                        Platform.runLater(
+                                () -> {
+                                    view.setRendezvousList(response.body());
+                                }
+                        );
+
+                    }
 
                     @Override
-                    public void onFailure(Call<List<Medecin>> call, Throwable t) {
-                        System.out.println("Error to get list of doctors by cabinet");
-                        System.out.println(t.getMessage());
-                        System.out.println(t.toString());
+                    public void onFailure(Call<List<Rendezvous>> call, Throwable t) {
 
                     }
                 }
-       , id );
-        }catch (Exception e){
-            System.out.println("kkkk: "+e.getMessage());
-
-        }
+                , id);
     }
 
 
@@ -153,8 +179,9 @@ public class RendezvousPresenterImpl implements RendezvousPresenter {
         System.out.println(t.getMessage());
     }
 
-    public void handleAddRendezvousResponse(Response<Map<String, String>> response) {
-        System.out.println("yassine"+response.body().get("value"));
+
+    public void handleAddRendezvousResponse(Response<Map<String, String>> response, Rendezvous rendezvous) {
+
 
         Platform.runLater(() -> {
             // Update UI components here

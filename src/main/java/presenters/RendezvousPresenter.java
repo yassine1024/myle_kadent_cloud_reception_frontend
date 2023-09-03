@@ -12,4 +12,5 @@ public interface RendezvousPresenter {
     void getPatientsByCabinet(String id);
 
     void getMedecinsByCabinet(String id, String source);
+    public void getAllRendezvousByDoctor(String id);
 }

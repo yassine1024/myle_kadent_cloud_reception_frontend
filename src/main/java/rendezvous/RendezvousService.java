@@ -16,4 +16,6 @@ public interface RendezvousService {
 
     public void addRendezvous(Callback<Map<String, String>> callback, Rendezvous rendezvous) ;
 
+    public void getAllRendezvousByDoctor(Callback<List<Rendezvous>> callback, String medecinId);
+
 }

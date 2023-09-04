@@ -52,7 +52,6 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     private List<Medecin> medecins;
 
 
-
     @Inject
     public RendezvousControllerImpl(RendezvousPresenter presenter) {
         this.presenter = presenter;
@@ -63,8 +62,17 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
 
         //this.intializeAgenda();
         this.initializeDoctorsList();
+
         //this.presenter.getAllAppointment();
 
+    }
+
+    private void defaultDoctor() {
+        if (this.medecins != null) {
+
+            this.doctorsList.setValue(medecins.get(0).getFirstName() + " " + medecins.get(0).getLastName());
+
+        }
     }
 
     private void initializeDoctorsList() {
@@ -135,19 +143,35 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     @Override
     @FXML
     public void goToNextWeek(MouseEvent event) {
-        System.out.println("ffff");
-        LocalDate currentStartDate = this.appointmentAgenda.getDisplayedLocalDateTime().toLocalDate();
+
+       /* LocalDate currentStartDate = this.appointmentAgenda.getDisplayedLocalDateTime().toLocalDate();
         LocalDate nextWeekStartDate = currentStartDate.plusWeeks(1);
-        this.appointmentAgenda.displayedLocalDateTime().set(nextWeekStartDate.atStartOfDay());
+        this.appointmentAgenda.displayedLocalDateTime().set(nextWeekStartDate.atStartOfDay());*/
+        this.rendezvousSchedule.weekAfter();
+        this.agendaStackPane
+                .getChildren()
+                .clear();
+        this.agendaStackPane
+                .getChildren()
+                .add(rendezvousSchedule.drawSchedule(
+                this.rendezvous, this
+        ));
 
     }
 
     @Override
     @FXML
     public void goToPreviousWeek(MouseEvent event) {
-        LocalDate currentStartDate = this.appointmentAgenda.getDisplayedLocalDateTime().toLocalDate();
+        /*LocalDate currentStartDate = this.appointmentAgenda.getDisplayedLocalDateTime().toLocalDate();
         LocalDate previousWeekStartDate = currentStartDate.minusWeeks(1);
-        this.appointmentAgenda.displayedLocalDateTime().set(previousWeekStartDate.atStartOfDay());
+        this.appointmentAgenda.displayedLocalDateTime().set(previousWeekStartDate.atStartOfDay());*/
+        this.rendezvousSchedule.weekBefore();
+        this.agendaStackPane
+                .getChildren()
+                .add(rendezvousSchedule.drawSchedule(
+                        this.rendezvous, this
+                ));
+
     }
 
 
@@ -155,9 +179,9 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     @FXML
     public void maximizeAgenda(MouseEvent event) {
 
-        Stage stage =(Stage) this.agendaStackPane.getScene().getWindow();
+        Stage stage = (Stage) this.agendaStackPane.getScene().getWindow();
 
-       new  FullScene().fullScene(this.getCopyFromAgendaStackPane(), stage);
+        new FullScene().fullScene(this.getCopyFromAgendaStackPane(), stage);
     }
 
     @Override
@@ -170,14 +194,14 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
 
 
     private RendezvousSchedule rendezvousSchedule;
+
     @Override
     @FXML
     public void showScheduleByDoctor(ActionEvent event) {
-        System.out.println("doctor selected");
+
         String medecin = this.doctorsList.getValue().toString();
 
         this.presenter.getAllRendezvousByDoctor(this.getTheMedecin(medecin).getId());
-
 
 
     }
@@ -191,12 +215,13 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
                 .collect(Collectors.toList());
 
         this.doctorsList.getItems().addAll(FXCollections.observableList(suggestionList));
+        this.defaultDoctor();
     }
 
-    private   List<Rendezvous> rendezvous;
+    private List<Rendezvous> rendezvous;
 
     @Override
-    public  List<Rendezvous> getRendezvous() {
+    public List<Rendezvous> getRendezvous() {
         return rendezvous;
     }
 
@@ -204,7 +229,7 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
     public void setRendezvousList(List<Rendezvous> rendezvous) {
 
 
-            this.rendezvous = rendezvous;
+        this.rendezvous = rendezvous;
 
         this.rendezvousSchedule = new RendezvousSchedule();
         this.agendaStackPane
@@ -216,7 +241,7 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
 
     @Override
     public void updateDateLabel(String startDate, String endDate) {
-        this.dateLabel.setText(startDate+" -----------> "+endDate);
+        this.dateLabel.setText(startDate + " -----------> " + endDate);
     }
 
     private Medecin getTheMedecin(String fullname) {
@@ -227,7 +252,7 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
                 .orElse(null);
     }
 
-    private StackPane getCopyFromAgendaStackPane(){
+    private StackPane getCopyFromAgendaStackPane() {
 
         // Create a new AnchorPane
         StackPane fullScreenStackPane = new StackPane();

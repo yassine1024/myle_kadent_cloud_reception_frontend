@@ -3,6 +3,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import io.github.palexdev.materialfx.controls.MFXComboBox?>
 <?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -15,8 +16,14 @@
             <URL value="@css/dark_theme/agendaStyles.css" />
             <URL value="@css/dark_theme/rendezvousShedule.css" />
          </stylesheets></StackPane>
-      <FontAwesomeIcon fill="#fff7f7" iconName="ARROW_LEFT" layoutX="25.0" layoutY="571.8571434020996" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#goToPreviousWeek" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="541.0" />
-      <FontAwesomeIcon fill="#fff7f7" iconName="ARROW_RIGHT" layoutX="630.5714302062988" layoutY="571.8571434020996" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#goToNextWeek" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" AnchorPane.rightAnchor="27.142854690551758" AnchorPane.topAnchor="541.0" />
+      <FontAwesomeIcon fill="#fff7f7" iconName="ARROW_LEFT" layoutX="25.0" layoutY="571.8571434020996" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#goToPreviousWeek" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="541.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIcon>
+      <FontAwesomeIcon fill="#fff7f7" iconName="ARROW_RIGHT" layoutX="630.5714302062988" layoutY="571.8571434020996" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#goToNextWeek" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" AnchorPane.rightAnchor="27.142854690551758" AnchorPane.topAnchor="541.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIcon>
       <AnchorPane layoutX="309.0" layoutY="500.0" onMouseClicked="#addRendezvous" prefHeight="91.0" prefWidth="67.0" styleClass="side_ankerpane" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0">
          <children>
             <FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="14.0" layoutY="56.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
@@ -26,10 +33,16 @@
                </font>
             </Label>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <FontAwesomeIcon fill="#fff7f7" iconName="ARROWS_ALT" layoutX="651.0" layoutY="35.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#maximizeAgenda" size="2em" textAlignment="CENTER" wrappingWidth="31.285715103149414" AnchorPane.rightAnchor="17.714284896850586" />
+      <FontAwesomeIcon fill="#fff7f7" iconName="ARROWS_ALT" layoutX="651.0" layoutY="35.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#maximizeAgenda" size="2em" textAlignment="CENTER" wrappingWidth="31.285715103149414" AnchorPane.rightAnchor="17.714284896850586">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIcon>
       <MFXComboBox fx:id="doctorsList" layoutX="54.0" layoutY="6.0" onAction="#showScheduleByDoctor" prefHeight="24.0" prefWidth="157.0" AnchorPane.bottomAnchor="580.0" />
-      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="301.0" layoutY="21.0" prefHeight="25.0" prefWidth="379.0" text="2022-02-22 -----------&gt; 2022-02-29" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="274.0" layoutY="21.0" prefHeight="25.0" prefWidth="406.0" text="2022-02-22 -----------&gt; 2022-02-29" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

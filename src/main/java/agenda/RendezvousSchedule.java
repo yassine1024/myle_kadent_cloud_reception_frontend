@@ -7,6 +7,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import rendezvous.Rendezvous;
 import views.RendezvousController;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
@@ -22,11 +23,13 @@ public class RendezvousSchedule {
     DateTimeFormatter dateFormatterTitle;
     String[] weeklyTable;
     String[] weeklyTableTitle;
-    private int week;
+    private int week = 0;
 
 
     public ScrollPane drawSchedule(List<Rendezvous> rendezvous, RendezvousController rendezvousController) {
         //There we should iterate for 24 hours each row has one hour
+        System.out.println("sammmmmt");
+        root.getChildren().clear();
         for (int row = 0; row <= 23; row++) {
             GridPane gridPane = new GridPane();
 
@@ -39,6 +42,7 @@ public class RendezvousSchedule {
         ScrollPane scrollPane = new ScrollPane(root);
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
+        System.out.println(this.weeklyTable[0] + "------------------->" + this.weeklyTable[6]);
         rendezvousController.updateDateLabel(this.weeklyTable[0], this.weeklyTable[6]);
         return scrollPane;
     }
@@ -123,12 +127,61 @@ public class RendezvousSchedule {
     private void setWeeklyTable() {
         this.weeklyTable = new String[7];
         this.weeklyTableTitle = new String[7];
-
-        for (int day = this.week * 7; day < this.week * 7 + 7; day++) {
-            this.weeklyTable[day - (this.week * 7)] = currentDate.plusDays(day).format(dateFormatter);
-            this.weeklyTableTitle[day - (this.week * 7)] = currentDate.plusDays(day).format(dateFormatterTitle);
+        for (int day = 0; day < 7; day++) {
+            this.weeklyTable[day] = currentDate.plusDays(day).format(dateFormatter);
+            this.weeklyTableTitle[day] = currentDate.plusDays(day).format(dateFormatterTitle);
 
         }
+    }
+
+    public void weekAfter() {
+        this.week++;
+        System.out.println(this.week + " after");
+        int after = this.week < 0 ? -1 * this.week : this.week;
+        if (this.week > 0) {
+            this.weekPlusDays(after);
+        } else if (this.week < 0) {
+            this.weekMinusDays(after);
+        } else {
+            this.setWeeklyTable();
+        }
+
+    }
+
+    private void weekMinusDays(int weight) {
+        int i = 0;
+        for (int day = (weight-1) * 7 + 6; day >= (weight-1) * 7; day--) {
+            this.weeklyTable[i] = currentDate.minusDays(day).format(dateFormatter);
+            this.weeklyTableTitle[i] = currentDate.minusDays(day).format(dateFormatterTitle);
+            i++;
+
+        }
+    }
+
+    private void weekPlusDays(int weight) {
+        int i = 0;
+        for (int day = weight * 7; day < weight * 7 + 7; day++) {
+            this.weeklyTable[i] = currentDate.plusDays(day).format(dateFormatter);
+            this.weeklyTableTitle[i] = currentDate.plusDays(day).format(dateFormatterTitle);
+            i++;
+        }
+    }
+
+    public void weekBefore() {
+        this.week--;
+
+        System.out.println(this.week + " before");
+        int before = this.week < 0 ? -1 * this.week : this.week;
+        if (this.week > 0) {
+            this.weekPlusDays(before);
+
+        } else if (this.week < 0) {
+            this.weekMinusDays(before);
+        }else{
+            this.setWeeklyTable();
+        }
+
+
     }
 
     private void initializeSchedule() {

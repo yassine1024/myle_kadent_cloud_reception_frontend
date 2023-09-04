@@ -35,13 +35,13 @@
 }
 .red:hover, .green:hover, .yellow:hover, .blue:hover, .Orange:hover,
 .purple:hover, .brown:hover, .grey:hover, .white:hover, .black:hover, .cell-box-add:hover {
-    cursor: hand;
+    -fx-cursor: hand;
 }
 .red, .green, .yellow, .blue, .Orange, .purple, .brown, .grey, .white, .black{
     -fx-border-color: gray;
     -fx-padding: 5;
     -fx-margin: 0 0 0 5px;
-    -fx-font-size: 14px;
+    -fx-font-size: 12px;
     -fx-min-width: 100px;
     -fx-max-width: 100px;
 }

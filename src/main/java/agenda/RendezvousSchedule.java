@@ -2,6 +2,7 @@ package agenda;
 
 import Config.Const;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
@@ -100,9 +101,24 @@ public class RendezvousSchedule {
                     Label label = new Label(appointment.getPatient().getFirstName() + " "
                             + appointment.getPatient().getLastName());
                     label.getStyleClass().add(new Const().ACTE_CELLULE.get(appointment.getActeToPerform()));
+                    label.setOnMouseClicked(event -> {
+                        // Call the method you want when the label is clicked
+                        showAppointmentDetails(appointment); // Replace 'yourMethodName' with the actual method name
+                    });
                     return label;
                 })
                 .collect(Collectors.toList());
+    }
+
+    private void showAppointmentDetails(Rendezvous appointment) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Appointment Details");
+        alert.setHeaderText("Détails du rendez-vous");
+        alert.setContentText("le patient: " + appointment.getPatient().getLastName()+" "+appointment.getPatient().getFirstName() +
+                "\na un rendezvous avec Docteur: " + appointment.getMedecin().getLastName()+" "+appointment.getMedecin().getFirstName()+
+                "\nà "+appointment.getTime()+" le "+appointment.getDate() +
+                "\npour "+appointment.getActeToPerform());
+        alert.showAndWait();
     }
 
     private void setStyleGridPane(GridPane gridPane) {

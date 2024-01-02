@@ -1,6 +1,7 @@
 package views;
 
 import Config.Const;
+import Config.FullScene;
 import Config.Time;
 import com.google.inject.Inject;
 import employee.medecin.Medecin;
@@ -10,17 +11,18 @@ import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
 import patient.Patient;
 import presenters.RendezvousPresenter;
-import rendezvous.MessagesRendezvous;
-import rendezvous.Rendezvous;
+import rendezvous.*;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class addRendezvousControllerImpl implements addRendezvousController, Initializable {
+public class addRendezvousControllerImpl implements addRendezvousController, Initializable, RendezvousListener {
 
 
     private RendezvousPresenter presenter;
@@ -57,6 +59,29 @@ public class addRendezvousControllerImpl implements addRendezvousController, Ini
         this.presenter = presenter;
     }
 
+    public addRendezvousControllerImpl(){
+        initializeEventHandler();
+    }
+
+    private void initializeEventHandler() {
+        // Register an event handler for the InitializeFormEvent
+        EventBus eventBus = new EventBus();
+        eventBus.addListener(this); // Add this controller as a listener to the event bus
+
+    }
+
+    private void initializeForm(RendezvousEvent event) {
+        // Implement the code to initialize the form here
+        System.out.println("Form initialized!");
+
+
+
+        new FullScene().displayWindow("/views/addRendezvous.fxml", TemplateControllerImpl.rendezvousModule);
+            //this.showScheduleByDoctor(null);
+        System.out.println("Dr: "+event.getMedecinFullName());
+        this.doctorList.setValue(event.getMedecinFullName());
+
+    }
     @Override
     @FXML
     public void addRendezvous(ActionEvent event) {
@@ -123,6 +148,11 @@ public class addRendezvousControllerImpl implements addRendezvousController, Ini
         }
         this.showAlert(value);
 
+    }
+
+    @Override
+    public void fireEvent(Event event) {
+        
     }
 
     private void showAlert(String value) {
@@ -197,4 +227,9 @@ public class addRendezvousControllerImpl implements addRendezvousController, Ini
         this.actGroup.getItems().addAll(acts);
     }
 
+    @Override
+    public void handleRendezvousEvent(RendezvousEvent event) {
+        // Handle the event and initialize the form
+        initializeForm(event);
+    }
 }

@@ -194,14 +194,15 @@ public class RendezvousControllerImpl implements RendezvousController, Initializ
 
 
     private RendezvousSchedule rendezvousSchedule;
-
+    public static String medecinFullName;
     @Override
     @FXML
     public void showScheduleByDoctor(ActionEvent event) {
 
-        String medecin = this.doctorsList.getValue().toString();
+        medecinFullName = this.doctorsList.getValue().toString();
 
-        this.presenter.getAllRendezvousByDoctor(this.getTheMedecin(medecin).getId());
+        this.presenter.getAllRendezvousByDoctor(this.getTheMedecin(medecinFullName).getId());
+        System.out.println("Med: "+medecinFullName);
 
 
     }

@@ -1,13 +1,20 @@
 package agenda;
 
 import Config.Const;
+import com.google.inject.Inject;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
+import rendezvous.EventBus;
 import rendezvous.Rendezvous;
+import rendezvous.RendezvousEvent;
+import rendezvous.RendezvousListener;
 import views.RendezvousController;
+import views.RendezvousControllerImpl;
+import views.addRendezvousController;
+import views.addRendezvousControllerImpl;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -25,11 +32,12 @@ public class RendezvousSchedule {
     String[] weeklyTable;
     String[] weeklyTableTitle;
     private int week = 0;
-
+private RendezvousController rendezvousController;
 
     public ScrollPane drawSchedule(List<Rendezvous> rendezvous, RendezvousController rendezvousController) {
         //There we should iterate for 24 hours each row has one hour
-        System.out.println("sammmmmt");
+
+        this.rendezvousController = rendezvousController;
         root.getChildren().clear();
         for (int row = 0; row <= 23; row++) {
             GridPane gridPane = new GridPane();
@@ -71,10 +79,23 @@ public class RendezvousSchedule {
                 VBox cellBox = new VBox();
                 cellBox.setAlignment(Pos.CENTER);
 //                cellBox.getStyleClass().add("root");
+                EventBus eventBus = new EventBus();
 
-
+                int dayIndex = col - 1;
                 Label label1 = new Label("+");
                 label1.getStyleClass().add("cell-box-add");
+                label1.setOnMouseClicked(event -> {
+                    // Call the method you want when the label is clicked
+                    /*openAddRendezvousWithDetails(RendezvousControllerImpl.medecinFullName,
+                            this.weeklyTable[dayIndex], time); // Replace 'yourMethodName' with the actual method name
+*/
+                    System.out.println("Event fire!");
+                    RendezvousListener rdvListener = new addRendezvousControllerImpl();
+                    RendezvousEvent rendezvousEvent = new RendezvousEvent(this, RendezvousControllerImpl.medecinFullName,
+                            this.weeklyTable[dayIndex], time);
+                    eventBus.addListener(rdvListener);
+                    eventBus.fireEvent(rendezvousEvent);
+                });
 
                 if (rendezvous != null) {
                     cellBox.getChildren().addAll(
@@ -87,6 +108,19 @@ public class RendezvousSchedule {
                 gridPane.add(cellBox, col, row);
             }
         }
+    }
+
+
+    private void openAddRendezvousWithDetails(String medecinFullName, String date, String time) {
+
+        System.out.println(medecinFullName + " " + date + " " + time);
+        RendezvousEvent event = new RendezvousEvent(this, medecinFullName, date, time);
+        addRendezvousController aRDV = new addRendezvousControllerImpl();
+        //aRDV.fireEvent(event);
+
+        this.rendezvousController.addRendezvous(null);
+
+
     }
 
     private Collection<? extends Label> fillAppointments(List<Rendezvous> rendezvous, int col, String time) {
@@ -114,10 +148,10 @@ public class RendezvousSchedule {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Appointment Details");
         alert.setHeaderText("Détails du rendez-vous");
-        alert.setContentText("le patient: " + appointment.getPatient().getLastName()+" "+appointment.getPatient().getFirstName() +
-                "\na un rendezvous avec Docteur: " + appointment.getMedecin().getLastName()+" "+appointment.getMedecin().getFirstName()+
-                "\nà "+appointment.getTime()+" le "+appointment.getDate() +
-                "\npour "+appointment.getActeToPerform());
+        alert.setContentText("le patient: " + appointment.getPatient().getLastName() + " " + appointment.getPatient().getFirstName() +
+                "\na un rendezvous avec Docteur: " + appointment.getMedecin().getLastName() + " " + appointment.getMedecin().getFirstName() +
+                "\nà " + appointment.getTime() + " le " + appointment.getDate() +
+                "\npour " + appointment.getActeToPerform());
         alert.showAndWait();
     }
 
@@ -166,7 +200,7 @@ public class RendezvousSchedule {
 
     private void weekMinusDays(int weight) {
         int i = 0;
-        for (int day = (weight-1) * 7 + 6; day >= (weight-1) * 7; day--) {
+        for (int day = (weight - 1) * 7 + 6; day >= (weight - 1) * 7; day--) {
             this.weeklyTable[i] = currentDate.minusDays(day).format(dateFormatter);
             this.weeklyTableTitle[i] = currentDate.minusDays(day).format(dateFormatterTitle);
             i++;
@@ -193,7 +227,7 @@ public class RendezvousSchedule {
 
         } else if (this.week < 0) {
             this.weekMinusDays(before);
-        }else{
+        } else {
             this.setWeeklyTable();
         }
 
